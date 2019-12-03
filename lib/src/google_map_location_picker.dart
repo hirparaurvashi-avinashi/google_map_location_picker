@@ -73,6 +73,7 @@ class LocationPickerState extends State<LocationPicker> {
   OverlayEntry overlayEntry;
 
   List<NearbyPlace> nearbyPlaces = List();
+  var isSearch = false;
 
   /// Session token required for autocomplete API call
   String sessionToken = Uuid().generateV4();
@@ -355,6 +356,12 @@ class LocationPickerState extends State<LocationPicker> {
     super.dispose();
   }
 
+  void updateSearchIcon(){
+    setState(() {
+      isSearch = false;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
@@ -368,10 +375,36 @@ class LocationPickerState extends State<LocationPicker> {
             backgroundColor: Colors.white,
             iconTheme: IconThemeData(color: Colors.black),
             key: appBarKey,
-            title: SearchInput(
+            title: isSearch ? SearchInput(
               (input) => searchPlace(input),
               key: searchInputKey,
+              callback: updateSearchIcon,
+            ) : Center(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  new Text(
+                    "Current Location",
+                    style: TextStyle(fontSize: 20.0),
+                  ),
+                  new Text(
+                    "Map dragged to change location",
+                    style: TextStyle(fontSize: 12.0),
+                  )
+                ],
+              ),
             ),
+            actions: <Widget>[
+              new IconButton(icon: new Icon(Icons.search),
+                onPressed: (){
+                  setState(() {
+                    isSearch = true;
+                  });
+                },
+              ),
+            ],
           ),
           body: MapPicker(
             initialCenter: widget.initialCenter,
