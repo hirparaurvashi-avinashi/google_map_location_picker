@@ -372,7 +372,9 @@ class LocationPickerState extends State<LocationPicker> {
         return Scaffold(
           appBar: AppBar(
             elevation: 0.0,
+            titleSpacing: 0.0,
             backgroundColor: Colors.white,
+            centerTitle: false,
             iconTheme: IconThemeData(color: Colors.black),
             key: appBarKey,
             title: isSearch ? SearchInput(
