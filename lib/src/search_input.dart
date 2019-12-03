@@ -69,13 +69,13 @@ class SearchInputState extends State {
       ),
       child: Row(
         children: <Widget>[
-          Icon(
-            Icons.search,
-            color: Colors.black,
-          ),
-          SizedBox(
-            width: 8,
-          ),
+//          Icon(
+//            Icons.search,
+//            color: Colors.black,
+//          ),
+//          SizedBox(
+//            width: 8,
+//          ),
           Expanded(
             child: TextField(
               decoration: InputDecoration(

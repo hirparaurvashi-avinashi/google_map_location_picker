@@ -364,6 +364,7 @@ class LocationPickerState extends State<LocationPicker> {
       child: Builder(builder: (context) {
         return Scaffold(
           appBar: AppBar(
+            elevation: 0.0,
             backgroundColor: Colors.white,
             iconTheme: IconThemeData(color: Colors.black),
             key: appBarKey,
