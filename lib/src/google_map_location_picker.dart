@@ -383,9 +383,9 @@ class LocationPickerState extends State<LocationPicker> {
               callback: updateSearchIcon,
             ) : Center(
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
                   new Text(
                     "Current Location",
