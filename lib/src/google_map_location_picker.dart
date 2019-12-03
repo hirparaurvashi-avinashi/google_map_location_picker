@@ -387,11 +387,11 @@ class LocationPickerState extends State<LocationPicker> {
                 children: <Widget>[
                   new Text(
                     "Current Location",
-                    style: TextStyle(fontSize: 20.0),
+                    style: TextStyle(fontSize: 20.0,color: Colors.black),
                   ),
                   new Text(
                     "Map dragged to change location",
-                    style: TextStyle(fontSize: 12.0),
+                    style: TextStyle(fontSize: 12.0,color: Colors.grey),
                   )
                 ],
               ),
