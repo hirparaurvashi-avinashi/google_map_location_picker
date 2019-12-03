@@ -383,17 +383,22 @@ class LocationPickerState extends State<LocationPicker> {
               callback: updateSearchIcon,
             ) : Center(
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
-                  new Text(
-                    "Current Location",
-                    style: TextStyle(fontSize: 20.0,color: Colors.black),
+                  Row(
+                    children: <Widget>[
+                      new Text(
+                        "Current Location",
+                        style: TextStyle(fontSize: 20.0,color: Colors.black),
+                      ),
+                    ],
                   ),
-                  new Text(
-                    "Map dragged to change location",
-                    style: TextStyle(fontSize: 12.0,color: Colors.grey),
+                  Row(
+                    children: <Widget>[
+                      new Text(
+                        "Map dragged to change location",
+                        style: TextStyle(fontSize: 12.0,color: Colors.grey),
+                      ),
+                    ],
                   )
                 ],
               ),
