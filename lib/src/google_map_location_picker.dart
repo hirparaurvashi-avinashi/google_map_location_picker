@@ -381,26 +381,29 @@ class LocationPickerState extends State<LocationPicker> {
               (input) => searchPlace(input),
               key: searchInputKey,
               callback: updateSearchIcon,
-            ) : Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                Row(
-                  children: <Widget>[
-                    new Text(
-                      "Party Location",
-                      style: TextStyle(fontSize: 20.0,color: Colors.black),
-                    ),
-                  ],
-                ),
-                Row(
-                  children: <Widget>[
-                    new Text(
-                      "Drag map to change location",
-                      style: TextStyle(fontSize: 12.0,color: Colors.grey),
-                    ),
-                  ],
-                )
-              ],
+            ) : Padding(
+              padding: EdgeInsets.only(top: 10),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Row(
+                    children: <Widget>[
+                      new Text(
+                        "Party Location",
+                        style: TextStyle(fontSize: 20.0,color: Colors.black),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    children: <Widget>[
+                      new Text(
+                        "Drag map to change location",
+                        style: TextStyle(fontSize: 12.0,color: Colors.grey),
+                      ),
+                    ],
+                  )
+                ],
+              ),
             ),
             actions: <Widget>[
               new IconButton(icon: new Icon(Icons.search),
